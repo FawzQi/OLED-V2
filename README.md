@@ -1,6 +1,6 @@
 # Nama Program
 
-Berisi program untuk pengoperasian oled sesuai kebutuhan dari VIROSE saat ini (Maret 2024)
+Berisi program untuk pengoperasian oled sesuai kebutuhan dari VIROSE saat ini (Maret 2024). OLED ini dibuat dalam 2 mode 1. saat mode fokus OLED, untuk memilih/memutar mode harus melihat pilihan menu scrolling OLED dan 2. mode tidak fokus OLED, untuk memilih\memutar OLED tidak perlu melakukan scroling pada pilihan menu tapi melakukan kombinasi pencetan tombol.
 
 ## Instalasi
 
@@ -91,18 +91,20 @@ const String seriesMenu[6] = {"SERIES_1", "SERIES_2", "SERIES_3", "SERIES_4", "S
 
 ```
 String show();                    // Returns the string to be displayed on the OLED
-String getCurrmodeStr();          // Returns the current mode
-String getPath();                 // Returns the current mode
-void setBatteryStr(String s);     // Sets the battery percentage
-void setCurmodeStr(String s);     // Sets the current mode
-void setModePlayedStr(String s);  // Sets the mode played
-void moveKursorUp();              // Moves the cursor up
-void moveKursorDown();            // Moves the cursor down
-void setMode();                   // Choose the mode
-void backMode();                  // Back to previous mode
-void pathCallback();              // Callback for the path
 void switchFocus();               // Switches the focus
 bool getFocus();                  // Returns the focus
+
+String getCurrmodeStr();          // Returns the current mode gunakan saat mode tidak fokus oled
+void setBatteryStr(String s);     // Sets the battery percentage gunakan saat mode tidak fokus oled
+void setCurmodeStr(String s);     // Sets the current mode gunakan saat mode tidak fokus oled
+void setModePlayedStr(String s);  // Sets the mode played gunakan saat mode tidak fokus oled
+
+String getPath();                 // Returns the current mode gunakan saat mode fokus oled
+void moveKursorUp();              // Moves the cursor up gunakan saat mode fokus oled
+void moveKursorDown();            // Moves the cursor down gunakan saat mode fokus oled
+void setMode();                   // Choose the mode gunakan saat mode fokus oled
+void backMode();                  // Back to previous mode gunakan saat mode fokus oled
+void pathCallback();              // Callback for the path gunakan saat mode fokus oled
 ```
 
 ## Kontribusi
